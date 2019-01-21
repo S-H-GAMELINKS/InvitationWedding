@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # Using Slim
 gem "slim-rails"
 
+# Using Foreman
+gem "foreman"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
