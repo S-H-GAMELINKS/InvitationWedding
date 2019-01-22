@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @attendance.name
+p
+  strong Attend:
+  = @attendance.attend
+p
+  strong Email:
+  = @attendance.email
+p
+  strong Tel:
+  = @attendance.tel
+p
+  strong Other:
+  = @attendance.other
+
+=> link_to 'Edit', edit_attendance_path(@attendance)
+'|
+=< link_to 'Back', attendances_path
