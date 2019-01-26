@@ -55,7 +55,7 @@
             <div class="input-group-append">
                 <span class="input-group-text">備考</span>
             </div>
-            <input type="text" class="form-control" v-model="content"> 
+            <input type="text" class="form-control" v-model="other"> 
         </div>
 
         <p>
@@ -77,7 +77,7 @@ export default {
             mail: "",
             tel: "",
             allergy: "",
-            content: ""
+            other: ""
         }
     },
     methods: {
@@ -85,7 +85,7 @@ export default {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
 
-            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, presence: this.presence, address: this.address, mail: this.mail, tel: this.tel, mail: this.mail, content: this.content}}).then((response) => {
+            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, presence: this.presence, address: this.address, mail: this.mail, tel: this.tel, mail: this.mail, other: this.other}}).then((response) => {
                 console.log(response);
             }, (error) => {
                 console.log(error);
