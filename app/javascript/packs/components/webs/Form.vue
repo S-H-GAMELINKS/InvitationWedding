@@ -65,6 +65,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data: function() {
         return {
@@ -76,6 +78,18 @@ export default {
             tel: "",
             allergy: "",
             content: ""
+        }
+    },
+    methods: {
+        createAttend: function() {
+            axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
+            axios.defaults.headers['content-type'] = 'application/json';
+
+            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, presence: this.presence, address: this.address, mail: this.mail, tel: this.tel, mail: this.mail, content: this.content}}).then((response) => {
+                console.log(response);
+            }, (error) => {
+                console.log(error);
+            })
         }
     }
 }
