@@ -13,7 +13,7 @@
             <div class="input-group-append">
                 <span class="input-group-text">出欠</span>
             </div>
-            <input type="text" class="form-control" v-model="presence"> 
+            <input type="checkbox" class="form-control" v-model="presence"> 
         </div>
         
         <div class="input-group">
@@ -58,7 +58,7 @@ export default {
     data: function() {
         return {
             name: "",
-            presence: "",
+            presence: false,
             address: "",
             mail: "",
             tel: "",
