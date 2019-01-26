@@ -57,6 +57,10 @@
             </div>
             <input type="text" class="form-control" v-model="content"> 
         </div>
+
+        <p>
+            <button type="button" class="btn btn-primary" v-on:click="createAttend">送信</button>
+        </p>
     </div>
 </template>
 
@@ -74,6 +78,5 @@ export default {
             content: ""
         }
     }
-
 }
 </script>
