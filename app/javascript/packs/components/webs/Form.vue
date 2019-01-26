@@ -11,6 +11,13 @@
 
         <div class="input-group">
             <div class="input-group-append">
+                <span class="input-group-text">フリガナ</span>
+            </div>
+            <input type="text" class="form-control" v-model="name_furi"> 
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-append">
                 <span class="input-group-text">出欠</span>
             </div>
             <input type="checkbox" class="form-control" v-model="presence"> 
@@ -58,6 +65,7 @@ export default {
     data: function() {
         return {
             name: "",
+            name_furi: "",
             presence: false,
             address: "",
             mail: "",
