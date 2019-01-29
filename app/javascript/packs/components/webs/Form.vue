@@ -20,7 +20,7 @@
             <div class="input-group-append">
                 <span class="input-group-text">出欠</span>
             </div>
-            <input type="checkbox" class="form-control" v-model="presence"> 
+            <input type="checkbox" class="form-control" v-model="attend"> 
         </div>
         
         <div class="input-group">
@@ -72,7 +72,7 @@ export default {
         return {
             name: "",
             name_furi: "",
-            presence: false,
+            attend: false,
             address: "",
             mail: "",
             tel: "",
@@ -85,7 +85,7 @@ export default {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
 
-            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, presence: this.presence, address: this.address, mail: this.mail, tel: this.tel, other: this.other}}).then((response) => {
+            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, attend: this.attend, address: this.address, mail: this.mail, tel: this.tel, other: this.other}}).then((response) => {
                 console.log(response);
             }, (error) => {
                 console.log(error);
