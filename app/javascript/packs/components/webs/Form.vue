@@ -34,7 +34,7 @@
             <div class="input-group-append">
                 <span class="input-group-text">メールアドレス</span>
             </div>
-            <input type="text" class="form-control" v-model="mail"> 
+            <input type="text" class="form-control" v-model="email"> 
         </div>
 
         <div class="input-group">
@@ -74,7 +74,7 @@ export default {
             name_furi: "",
             attend: false,
             address: "",
-            mail: "",
+            email: "",
             tel: "",
             allergy: "",
             other: ""
@@ -85,7 +85,7 @@ export default {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
 
-            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, attend: this.attend, address: this.address, mail: this.mail, tel: this.tel, other: this.other}}).then((response) => {
+            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, attend: this.attend, address: this.address, email: this.email, tel: this.tel, other: this.other}}).then((response) => {
                 console.log(response);
             }, (error) => {
                 console.log(error);
