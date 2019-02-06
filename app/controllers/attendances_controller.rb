@@ -28,6 +28,7 @@ class AttendancesController < ApplicationController
 
     respond_to do |format|
       if @attendance.save
+        NoticeMailer.notice(@attendance).deliver_now
         format.html { redirect_to @attendance, notice: 'Attendance was successfully created.' }
         format.json { render :show, status: :created, location: @attendance }
       else
