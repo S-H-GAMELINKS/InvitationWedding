@@ -10,8 +10,6 @@ export default new VueRouter({
     mode: 'history',
     routes: [
         { path: '/', component: Index },
-        { path: '/about', component: About },
-        { path: '/contact', component: Contact },
         { path: '/form', component: Form },
     ]
 })
