@@ -26,6 +26,13 @@
                 <option>欠席</option>
             </select> 
         </div>
+
+        <div class="input-group">
+            <div class="input-group-append">
+                <span class="input-group-text">郵便番号</span>
+            </div>
+            <input type="text" class="form-control" v-model="yubin"> 
+        </div>
         
         <div class="input-group">
             <div class="input-group-append">
@@ -97,7 +104,7 @@ export default {
                 this.attend = false;
             }
 
-            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, attend: this.attend, address: this.address, email: this.email, tel: this.tel, other: this.other}}).then((response) => {
+            axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, attend: this.attend, yubin: this.yubin, address: this.address, email: this.email, tel: this.tel, other: this.other}}).then((response) => {
                 console.log(response);
 
                 if (this.attend === true) {
