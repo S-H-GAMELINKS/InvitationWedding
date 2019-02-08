@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div v-if="flag">
-        <h1>Invitation Wedding Form</h1>
+        <h1>招待状</h1>
 
         <div class="input-group">
             <div class="input-group-append">
