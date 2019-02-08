@@ -20,7 +20,11 @@
             <div class="input-group-append">
                 <span class="input-group-text">出欠</span>
             </div>
-            <input type="checkbox" class="form-control" v-model="attend"> 
+            <select v-model="attendance">
+                <option>出欠確認</option>
+                <option>出席</option>
+                <option>欠席</option>
+            </select> 
         </div>
         
         <div class="input-group">
@@ -73,6 +77,7 @@ export default {
         return {
             name: "",
             name_furi: "",
+            attendance: "",
             attend: false,
             address: "",
             email: "",
@@ -86,8 +91,21 @@ export default {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
 
+            if (this.attendance === "出席") {
+                this.attend = true;
+            } else {
+                this.attend = false;
+            }
+
             axios.post('/attendances', {attendance: {name: this.name, name_furi: this.name_furi, attend: this.attend, address: this.address, email: this.email, tel: this.tel, other: this.other}}).then((response) => {
                 console.log(response);
+
+                if (this.attend === true) {
+                    alert("会場で会えるのをお待ちしております！")
+                } else {
+                    alert("また会える時を楽しみにしております！")
+                }
+
             }, (error) => {
                 console.log(error);
             })
