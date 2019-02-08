@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <div v-if="flag">
         <h1>Invitation Wedding Form</h1>
 
         <div class="input-group">
@@ -72,6 +73,10 @@
         <p>
             <button type="button" class="btn btn-primary" v-on:click="createAttend">送信</button>
         </p>
+        </div>
+        <div v-else>
+            招待状にご記入いただきありがとうございます！
+        </div>
     </div>
 </template>
 
@@ -82,6 +87,7 @@ import $ from 'jquery';
 export default {
     data: function() {
         return {
+            flag: true,
             name: "",
             name_furi: "",
             attendance: "",
@@ -112,6 +118,8 @@ export default {
                 } else {
                     alert("また会える時を楽しみにしております！")
                 }
+
+                this.flag = false;
 
             }, (error) => {
                 console.log(error);
