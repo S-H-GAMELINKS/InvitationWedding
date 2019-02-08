@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <router-link class="navbar-brand" to="#">Invitation Wedding</router-link>
+            <router-link class="navbar-brand" to="#">招待状アプリ</router-link>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Menu
