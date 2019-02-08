@@ -3,7 +3,7 @@
 <%= "氏名：#{@attend.name}"%>
 <%= "フリガナ：#{@attend.name_furi}"%>
 <%= "住所：#{@attend.address}"%>
-<%= "出欠：#{@attend.attend}"%>
+<%= "出欠：#{@attend.attend ? "出席" : "欠席" }"%>
 <%= "メールアドレス：#{@attend.email}"%>
 <%= "電話番号：#{@attend.tel}"%>
 <%= "備考：#{@attend.other}"%>
